@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
+
+#ifdef DEBUG
 #import "GSTouchesShowingWindow.h"
+#endif
 
 @implementation AppDelegate
 
@@ -17,12 +20,16 @@
     return YES;
 }
 
+#ifdef DEBUG
 - (GSTouchesShowingWindow *)window {
+    
+
     static GSTouchesShowingWindow *window = nil;
     if (!window) {
         window = [[GSTouchesShowingWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     }
     return window;
 }
+#endif
 
 @end
